@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Organization Catalogue</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.google.com/specimen/Luxurious+Roman?categoryFilters=Feeling:%2FExpressive%2FSophisticated" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon-dark: #2a3a6a;
+            --maroon-medium: #a00000;
+            --maroon-light: #c00000;
+            --maroon-very-light: #f5e6e6;
+            --gold-accent: #ffd700;
+        }
+
+        .main-container {
+        padding-top: 100px !important;
+        }
+        body {
+            font-family: 'Quintessential', cursive;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-image: url('https://i.pinimg.com/736x/d7/77/37/d77737cae1098d5453573c53250f0d1c.jpg');
+            color: #ad2626; 
+        }
+        .navbar {
+            background-color: var(--maroon-dark);
+            padding: 15px 0;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+        .nav-link:hover {
+            color: var(--gold-accent) !important;
+        }
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #ae810e;
+            padding-bottom: 10px;
+            font-weight: bold;
+            font-family: 'Pirata One', cursive;
+            color: #f9b73e;
+            -webkit-text-stroke: 0.5px #875220;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #f8a50c;
+            border-radius: 4px;
+            background-color: white;
+            color: #242c6b;
+        }
+        button {
+            background-color: #2a3a6a;
+            font-family: 'Quintessential', cursive;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #010101;
+        }
+        #club-info {
+            background-color: #ffffff; /* Very light maroon tint */
+                       border: 1px solid #f8a50c;
+
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 2cap solid #0e2265;
+            color: #4a1c1c;
+            font-family: 'Luxurious Roman';
+            width: 1000px; 
+        }
+        label {
+            font-weight: bold;
+            color: #080348;
+        }
+        option {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">༒︎ Polaris College of Medicine ༒︎</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="grade_calculator.html">Performance Evaluator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="clubs.html">Organizations</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+         <h1>༒︎ Campus Organization Catalogue ༒︎</h1>
+    
+        <label for="club-select">Browse Available Divisions:</label>
+        <select id="club-select">
+        <option value="">-- Find Your Community --</option>
+        <option value="student_government">Student Government</option>
+        <option value="specialty_interest_groups">Specialty Interest Groups</option>
+        <option value="research_and_innovation">Research and Innovation</option>
+        <option value="sports_and_recreation">Sports and Recreation</option>
+        <option value="cultural_and_arts">Cultural and Arts</option>
+    </select>
+        
+        <button id="show-info" py-click="show_club_info">Show Division Summary</button>
+        
+        <pre id="club-info"></pre>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="py" src="main.py"></script>
+</body>
+</html>
